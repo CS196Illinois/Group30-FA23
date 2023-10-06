@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfl6f241br40i"]
+
+[ext_resource type="Texture2D" uid="uid://d8kp68sc2mcs" path="res://Resources/blackhole.png" id="1_g1ukk"]
+[ext_resource type="Script" path="res://Scripts/rotate.gd" id="2_bvr7k"]
+[ext_resource type="Script" path="res://Scripts/deathzone.gd" id="3_v0ykc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc5as"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avxws"]
+
+[node name="gravityfield" type="Area2D"]
+scale = Vector2(10, 10)
+gravity_space_override = 1
+gravity_point = true
+gravity = 4096.0
+
+[node name="field" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yc5as")
+
+[node name="texture" type="Sprite2D" parent="field"]
+scale = Vector2(0.006, 0.006)
+texture = ExtResource("1_g1ukk")
+script = ExtResource("2_bvr7k")
+
+[node name="deathzone" type="Area2D" parent="field"]
+script = ExtResource("3_v0ykc")
+
+[node name="collision" type="CollisionShape2D" parent="field/deathzone"]
+scale = Vector2(0.204, 0.204)
+shape = SubResource("CircleShape2D_avxws")
+
+[connection signal="body_entered" from="field/deathzone" to="field/deathzone" method="_on_body_entered"]
