@@ -1,32 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfl6f241br40i"]
+[gd_scene load_steps=8 format=3 uid="uid://dfl6f241br40i"]
 
 [ext_resource type="Texture2D" uid="uid://d8kp68sc2mcs" path="res://Resources/blackhole.png" id="1_g1ukk"]
 [ext_resource type="Script" path="res://Scripts/rotate.gd" id="2_bvr7k"]
 [ext_resource type="Script" path="res://Scripts/deathzone.gd" id="3_v0ykc"]
+[ext_resource type="Texture2D" uid="uid://b1akhyfoi2dib" path="res://Resources/hazard.png" id="4_wh6mo"]
+[ext_resource type="Script" path="res://rotateslow.gd" id="5_s06o3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc5as"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_avxws"]
 
 [node name="gravityfield" type="Area2D"]
-scale = Vector2(10, 10)
+scale = Vector2(15, 15)
 gravity_space_override = 1
 gravity_point = true
-gravity = 4096.0
+gravity = 1e+09
+metadata/_edit_horizontal_guides_ = [-178.0]
 
 [node name="field" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_yc5as")
 
 [node name="texture" type="Sprite2D" parent="field"]
-scale = Vector2(0.006, 0.006)
+scale = Vector2(0.003, 0.003)
 texture = ExtResource("1_g1ukk")
 script = ExtResource("2_bvr7k")
 
 [node name="deathzone" type="Area2D" parent="field"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("3_v0ykc")
 
 [node name="collision" type="CollisionShape2D" parent="field/deathzone"]
 scale = Vector2(0.204, 0.204)
 shape = SubResource("CircleShape2D_avxws")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="hazardzone" type="Sprite2D" parent="."]
+position = Vector2(1.33333, 0.299997)
+scale = Vector2(0.158118, 0.157849)
+texture = ExtResource("4_wh6mo")
+script = ExtResource("5_s06o3")
 
 [connection signal="body_entered" from="field/deathzone" to="field/deathzone" method="_on_body_entered"]
