@@ -11,5 +11,11 @@ config_version=5
 [application]
 
 config/name="Space Project"
-run/main_scene="res://Scenes/test.tscn"
+run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
+run/collision/shape_color=Color(0, 0.6, 0.7, 0.42)
+run/collision/draw_2d_outlines=true
+
+[debug]
+
+shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.419608)

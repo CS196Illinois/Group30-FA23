@@ -11,7 +11,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Player"]]
-position = Vector2(640, 104)
+position = Vector2(-74, 586)
 mass = 10.0
 can_sleep = false
 script = ExtResource("1_43372")
@@ -19,17 +19,18 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_tu2e3")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_085gi")
 
 [node name="gravityfield" parent="." instance=ExtResource("1_n4w71")]
-position = Vector2(886, 462)
+position = Vector2(633, 328)
 scale = Vector2(5, 5)
 gravity_space_override = 3
 gravity = 80000.0
 script = ExtResource("4_xa4jp")
 
 [node name="blackhole" parent="." instance=ExtResource("2_bq4ve")]
-position = Vector2(362, 288)
+position = Vector2(-293, 348)

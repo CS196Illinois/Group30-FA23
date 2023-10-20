@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgb23c7lbjt27"]
+
+[ext_resource type="Script" path="res://Scripts/menuroot.gd" id="1_p8w5k"]
+[ext_resource type="FontFile" uid="uid://dmfk1ewsy5bpq" path="res://Resources/PressStart2P.ttf" id="1_py7nv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8dlw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6i5xb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uprb6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kblig"]
+
+[node name="layer" type="CanvasLayer"]
+
+[node name="menuroot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p8w5k")
+
+[node name="mainmenu" type="MarginContainer" parent="menuroot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="center" type="CenterContainer" parent="menuroot/mainmenu"]
+layout_mode = 2
+
+[node name="vertical" type="VBoxContainer" parent="menuroot/mainmenu/center"]
+layout_mode = 2
+
+[node name="label" type="RichTextLabel" parent="menuroot/mainmenu/center/vertical"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_py7nv")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake]UNNAMED SPACE GAME"
+fit_content = true
+autowrap_mode = 0
+
+[node name="seperator" type="HSeparator" parent="menuroot/mainmenu/center/vertical"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="start" type="Button" parent="menuroot/mainmenu/center/vertical"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t8dlw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t8dlw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t8dlw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t8dlw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t8dlw")
+text = "START"
+
+[node name="seperator2" type="HSeparator" parent="menuroot/mainmenu/center/vertical"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="settings" type="Button" parent="menuroot/mainmenu/center/vertical"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i5xb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i5xb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i5xb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6i5xb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6i5xb")
+text = "SETTINGS"
+
+[node name="seperator3" type="HSeparator" parent="menuroot/mainmenu/center/vertical"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="exit" type="Button" parent="menuroot/mainmenu/center/vertical"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uprb6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uprb6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uprb6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uprb6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uprb6")
+text = "QUIT GAME"
+
+[node name="settingsmenu" type="MarginContainer" parent="menuroot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_right = 1152.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="center" type="CenterContainer" parent="menuroot/settingsmenu"]
+layout_mode = 2
+
+[node name="vertical" type="VBoxContainer" parent="menuroot/settingsmenu/center"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_font_sizes/font_size = 48
+text = "Work in Progress"
+
+[node name="HSeparator" type="HSeparator" parent="menuroot/settingsmenu/center/vertical"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="back" type="Button" parent="menuroot/settingsmenu/center/vertical"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kblig")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kblig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kblig")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kblig")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kblig")
+text = "Back"
+
+[connection signal="pressed" from="menuroot/mainmenu/center/vertical/settings" to="menuroot" method="_on_settings_pressed"]
+[connection signal="pressed" from="menuroot/mainmenu/center/vertical/exit" to="menuroot" method="_on_exit_pressed"]
+[connection signal="pressed" from="menuroot/settingsmenu/center/vertical/back" to="menuroot" method="_on_back_pressed"]
