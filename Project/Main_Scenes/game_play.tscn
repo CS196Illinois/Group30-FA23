@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cofp1ike2ejvo"]
+
+[ext_resource type="PackedScene" uid="uid://dvgn467v16w8b" path="res://Player/player.tscn" id="1_x08dq"]
+[ext_resource type="Texture2D" uid="uid://dy75lmlfxxibm" path="res://Textures/SpaceShooter_Assets/meteorBig.png" id="2_n8c6g"]
+
+[node name="GamePlay" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_x08dq")]
+position = Vector2(489, 493)
+
+[node name="RelativePoint" type="Sprite2D" parent="."]
+position = Vector2(488, 389)
+texture = ExtResource("2_n8c6g")
