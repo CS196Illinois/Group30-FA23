@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgb23c7lbjt27"]
+[gd_scene load_steps=10 format=3 uid="uid://cgb23c7lbjt27"]
 
 [ext_resource type="Script" path="res://Scripts/menuroot.gd" id="1_p8w5k"]
 [ext_resource type="FontFile" uid="uid://dmfk1ewsy5bpq" path="res://Resources/PressStart2P.ttf" id="1_py7nv"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_fkact"]
+[ext_resource type="Texture2D" uid="uid://bfuwuxxos1u7o" path="res://Resources/menubackground.png" id="3_mmmgp"]
+[ext_resource type="AudioStream" uid="uid://bqkfvlw7vdf8c" path="res://Resources/button-124476.mp3" id="4_50l2j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8dlw"]
 
@@ -128,6 +131,8 @@ layout_mode = 2
 
 [node name="back" type="Button" parent="menuroot/settingsmenu/center/vertical"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_py7nv")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kblig")
@@ -137,6 +142,20 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_kblig")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kblig")
 text = "Back"
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="menuroot"]
+scroll_limit_end = Vector2(2304, 0)
+script = ExtResource("3_fkact")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="menuroot/ParallaxBackground"]
+
+[node name="background" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1152, 324)
+texture = ExtResource("3_mmmgp")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_50l2j")
+
+[connection signal="pressed" from="menuroot/mainmenu/center/vertical/start" to="menuroot" method="_on_start_pressed"]
 [connection signal="pressed" from="menuroot/mainmenu/center/vertical/settings" to="menuroot" method="_on_settings_pressed"]
 [connection signal="pressed" from="menuroot/mainmenu/center/vertical/exit" to="menuroot" method="_on_exit_pressed"]
 [connection signal="pressed" from="menuroot/settingsmenu/center/vertical/back" to="menuroot" method="_on_back_pressed"]

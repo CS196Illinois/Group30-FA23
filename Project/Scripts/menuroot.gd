@@ -15,6 +15,7 @@ func _ready() -> void:
 
 @onready var main_menu = $mainmenu
 @onready var settings_menu = $settingsmenu
+@onready var click = get_parent().get_node("click")
 
 func move_to_next_menu(next_menu_id: String):
 	var next_menu = get_menu_from_id(next_menu_id)
@@ -44,14 +45,18 @@ func get_menu_from_id(menu_id: String) -> Control:
 
 
 func _on_exit_pressed():
+	click.play()
 	get_tree().quit()
 
 
 func _on_settings_pressed():
+	click.play()
 	move_to_next_menu("settings_menu")
 
 
 func _on_back_pressed():
+	click.play()
 	move_to_prev_menu()
 
-
+func _on_start_pressed():
+	click.play()
