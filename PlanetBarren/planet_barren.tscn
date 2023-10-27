@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2gn4owtcuwjp"]
+
+[ext_resource type="Texture2D" uid="uid://4vvywwgdwrsg" path="res://art/planetBarren.jpeg" id="1_sn433"]
+[ext_resource type="Script" path="res://planet_barren.gd" id="1_xk3k6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jku7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sn433")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa5yl"]
+radius = 492.318
+
+[node name="planetBarren" type="Node2D"]
+script = ExtResource("1_xk3k6")
+
+[node name="planetBarren" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jku7v")
+
+[node name="planetBarrenArea" type="Area2D" parent="."]
+
+[node name="barrenCollisionArea" type="CollisionShape2D" parent="planetBarrenArea"]
+shape = SubResource("CircleShape2D_wa5yl")
+
+[connection signal="body_entered" from="planetBarrenArea" to="." method="_on_planet_barren_area_body_entered"]
+[connection signal="body_exited" from="planetBarrenArea" to="." method="_on_planet_barren_area_body_exited"]
