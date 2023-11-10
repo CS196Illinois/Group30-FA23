@@ -1,12 +1,12 @@
 extends Node2D
 
-var mass = 1000 #set some value
+var mass = 1000
 var vegetation = true
 
 var land = false	#whether ship lands on the planet
 var crush = false	#whether ship crushes
 var fuel = false
-var crushSpeed = 400 #set some value
+var crushSpeed = 400
 
 
 # Called when the node enters the scene tree for the first time.
