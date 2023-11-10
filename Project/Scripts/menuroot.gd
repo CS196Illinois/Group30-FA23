@@ -72,6 +72,10 @@ func _process(delta):
 		previous = select
 		select = randi() % 5
 		parallax_background.scroll_offset.x = 0
+	
+	if background_one.visible == false && background_two.visible == false && background_three.visible == false && background_four.visible == false && background_five.visible == false:
+		background_one.visible = true
+		previous = 1
 
 @onready var main_menu = $mainmenu
 @onready var settings_menu = $settingsmenu
