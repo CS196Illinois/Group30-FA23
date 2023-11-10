@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt7tfujwwv6o5"]
+
+[ext_resource type="Script" path="res://Scripts/deathzone.gd" id="1_xsql6"]
+[ext_resource type="Texture2D" uid="uid://d8kp68sc2mcs" path="res://Resources/Textures/blackhole.png" id="2_qy7op"]
+[ext_resource type="Script" path="res://Scripts/rotate.gd" id="3_2ob0p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iohsj"]
+
+[node name="blackhole" type="Area2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_xsql6")
+
+[node name="texture" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_qy7op")
+script = ExtResource("3_2ob0p")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iohsj")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

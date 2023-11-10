@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://crc2agcausw01"]
+
+[ext_resource type="PackedScene" uid="uid://dfl6f241br40i" path="res://Scenes/blackholeAlternate.tscn" id="1_n4w71"]
+[ext_resource type="Script" path="res://Scripts/RigidBody2D.gd" id="1_od7u3"]
+[ext_resource type="Texture2D" uid="uid://j06g6a7uy5ls" path="res://Resources/Textures/guy.png" id="2_2qx6r"]
+[ext_resource type="PackedScene" uid="uid://dt7tfujwwv6o5" path="res://Scenes/blackhole.tscn" id="2_bq4ve"]
+[ext_resource type="Script" path="res://Scripts/blackholeAlternate.gd" id="4_trmaf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tu2e3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Player"]]
+position = Vector2(478, 0)
+mass = 10.0
+can_sleep = false
+script = ExtResource("1_od7u3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_tu2e3")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_2qx6r")
+
+[node name="gravityfield" parent="." instance=ExtResource("1_n4w71")]
+position = Vector2(764, 303)
+scale = Vector2(5, 5)
+gravity_space_override = 3
+gravity = 80000.0
+script = ExtResource("4_trmaf")
+
+[node name="blackhole" parent="." instance=ExtResource("2_bq4ve")]
+position = Vector2(-293, 348)
