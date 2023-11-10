@@ -9,6 +9,7 @@ var menu_transition_time = 0.5
 @onready var music_bus_id = AudioServer.get_bus_index("Music")
 @onready var sfx_bus_id = AudioServer.get_bus_index("SFX")
 @onready var select = randi() % 5
+@onready var previous: int
 
 var current_menu
 var menu_stack := []
@@ -21,46 +22,54 @@ func _ready() -> void:
 	menu_bgm.play()
 
 func _process(delta):
-	if select == 0:
+	
+	if select == 0 && select != previous:
 		background_one.visible = true
 		background_two.visible = false
 		background_three.visible = false
 		background_four.visible = false
 		background_five.visible = false
-
-	if select == 1:
+	elif abs(parallax_background.scroll_base_offset.x) >= 1152:
+		select = randi() % 5
+	if select == 1 && select != previous:
 		background_one.visible = false
 		background_two.visible = true
 		background_three.visible = false
 		background_four.visible = false
 		background_five.visible = false
-
-	if select == 2:
+	elif abs(parallax_background.scroll_base_offset.x) >= 1152:
+		select = randi() % 5
+	if select == 2 && select != previous:
 		background_one.visible = false
 		background_two.visible = false
 		background_three.visible = true
 		background_four.visible = false
 		background_five.visible = false
-
-	if select == 3:
+	elif abs(parallax_background.scroll_base_offset.x) >= 1152:
+		select = randi() % 5
+	if select == 3 && select != previous:
 		background_one.visible = false
 		background_two.visible = false
 		background_three.visible = false
 		background_four.visible = true
 		background_five.visible = false
-
-	if select == 4:
+	elif abs(parallax_background.scroll_base_offset.x) >= 1152:
+		select = randi() % 5
+	if select == 4 && select != previous:
 		background_one.visible = false
 		background_two.visible = false
 		background_three.visible = false
 		background_four.visible = false
 		background_five.visible = true
-
+	elif abs(parallax_background.scroll_base_offset.x) >= 1152:
+		select = randi() % 5
 	if menu_bgm.playing == false:
 		menu_bgm.play()
 
 	if abs(parallax_background.scroll_offset.x) >= 1152:
 		animation_player.play("Transition")
+		await get_tree().create_timer(0.5).timeout
+		previous = select
 		select = randi() % 5
 		parallax_background.scroll_offset.x = 0
 
@@ -155,18 +164,15 @@ func _on_fullscreen_toggled(button_pressed):
 			previous_window = 2
 		DisplayServer.window_set_mode(previous_window)
 
-
-
 func _on_masterslider_value_changed(value):
 	AudioServer.set_bus_volume_db(master_bus_id, linear_to_db(value))
 	AudioServer.set_bus_mute(master_bus_id, value < .05)
-
 
 func _on_musicslider_value_changed(value):
 	AudioServer.set_bus_volume_db(music_bus_id, linear_to_db(value))
 	AudioServer.set_bus_mute(music_bus_id, value < .05)
 
-
 func _on_sfxslider_value_changed(value):
 	AudioServer.set_bus_volume_db(sfx_bus_id, linear_to_db(value))
 	AudioServer.set_bus_mute(sfx_bus_id, value < .05)
+
