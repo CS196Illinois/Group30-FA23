@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dfl6f241br40i"]
 
-[ext_resource type="Texture2D" uid="uid://d8kp68sc2mcs" path="res://Resources/blackhole.png" id="1_g1ukk"]
+[ext_resource type="Texture2D" uid="uid://d8kp68sc2mcs" path="res://Resources/Textures/blackhole.png" id="1_evq7j"]
 [ext_resource type="Script" path="res://Scripts/rotate.gd" id="2_bvr7k"]
 [ext_resource type="Script" path="res://Scripts/deathzone.gd" id="3_v0ykc"]
-[ext_resource type="Texture2D" uid="uid://b1akhyfoi2dib" path="res://Resources/hazard.png" id="4_wh6mo"]
+[ext_resource type="Texture2D" uid="uid://b1akhyfoi2dib" path="res://Resources/Textures/hazard.png" id="4_pd3a5"]
 [ext_resource type="Script" path="res://Scripts/rotateslow.gd" id="5_k7ros"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc5as"]
@@ -23,7 +23,7 @@ shape = SubResource("CircleShape2D_yc5as")
 
 [node name="texture" type="Sprite2D" parent="field"]
 scale = Vector2(0.003, 0.003)
-texture = ExtResource("1_g1ukk")
+texture = ExtResource("1_evq7j")
 script = ExtResource("2_bvr7k")
 
 [node name="deathzone" type="Area2D" parent="field"]
@@ -38,7 +38,7 @@ debug_color = Color(1, 1, 1, 0.419608)
 [node name="hazardzone" type="Sprite2D" parent="."]
 position = Vector2(1.33333, 0.299997)
 scale = Vector2(0.158118, 0.157849)
-texture = ExtResource("4_wh6mo")
+texture = ExtResource("4_pd3a5")
 script = ExtResource("5_k7ros")
 
 [connection signal="body_entered" from="field/deathzone" to="field/deathzone" method="_on_body_entered"]

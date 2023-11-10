@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d8kp68sc2mcs"
-path="res://.godot/imported/blackhole.png-2b43dd25ceb57e46940547beefc95a17.ctex"
+uid="uid://6kdqj81a7bwb"
+path="res://.godot/imported/background2.png-950a52e53131af473b57df73fe5e0c66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/blackhole.png"
-dest_files=["res://.godot/imported/blackhole.png-2b43dd25ceb57e46940547beefc95a17.ctex"]
+source_file="res://Resources/Textures/background2.png"
+dest_files=["res://.godot/imported/background2.png-950a52e53131af473b57df73fe5e0c66.ctex"]
 
 [params]
 

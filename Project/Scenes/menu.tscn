@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgb23c7lbjt27"]
+[gd_scene load_steps=18 format=3 uid="uid://tweymw1ce82o"]
 
 [ext_resource type="Script" path="res://Scripts/menuroot.gd" id="1_p8w5k"]
-[ext_resource type="FontFile" uid="uid://dmfk1ewsy5bpq" path="res://Resources/PressStart2P.ttf" id="1_py7nv"]
+[ext_resource type="FontFile" uid="uid://dmfk1ewsy5bpq" path="res://Resources/Fonts/PressStart2P.ttf" id="2_k5fyj"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="3_fkact"]
-[ext_resource type="Texture2D" uid="uid://bfuwuxxos1u7o" path="res://Resources/menubackground.png" id="3_mmmgp"]
-[ext_resource type="AudioStream" uid="uid://bqkfvlw7vdf8c" path="res://Resources/button-124476.mp3" id="4_50l2j"]
-[ext_resource type="AudioStream" uid="uid://bkosfatqxpobs" path="res://Resources/05 - ziki_7 - Lunatic Red Eyes.mp3" id="6_cqviq"]
+[ext_resource type="Texture2D" uid="uid://bfuwuxxos1u7o" path="res://Resources/Textures/background1.png" id="4_gch18"]
+[ext_resource type="AudioStream" uid="uid://bqkfvlw7vdf8c" path="res://Resources/Audio/SFX/button-124476.mp3" id="5_qiyou"]
+[ext_resource type="Texture2D" uid="uid://6kdqj81a7bwb" path="res://Resources/Textures/background2.png" id="5_u7lil"]
+[ext_resource type="Texture2D" uid="uid://dxptp6ofb0osw" path="res://Resources/Textures/background3.png" id="6_poxyp"]
+[ext_resource type="AudioStream" uid="uid://bkosfatqxpobs" path="res://Resources/Audio/Music/05 - ziki_7 - Lunatic Red Eyes.mp3" id="6_ybvwm"]
+[ext_resource type="Texture2D" uid="uid://xxcibv5k0del" path="res://Resources/Textures/background4.png" id="7_472cq"]
+[ext_resource type="Texture2D" uid="uid://dire7v5sacmfu" path="res://Resources/Textures/background5.png" id="8_na6cj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8dlw"]
 
@@ -13,7 +17,30 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uprb6"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqhyq"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kblig"]
+
+[sub_resource type="Animation" id="Animation_j2oi1"]
+resource_name = "Transition"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.827451, 0), Color(1, 1, 0.827451, 1), Color(1, 1, 0.827451, 1), Color(1, 1, 0.827451, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6n2if"]
+_data = {
+"Transition": SubResource("Animation_j2oi1")
+}
 
 [node name="layer" type="CanvasLayer"]
 
@@ -42,7 +69,7 @@ layout_mode = 2
 
 [node name="label" type="RichTextLabel" parent="menuroot/mainmenu/center/vertical"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_py7nv")
+theme_override_fonts/normal_font = ExtResource("2_k5fyj")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[shake]UNNAMED SPACE GAME"
@@ -58,7 +85,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
-theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_fonts/font = ExtResource("2_k5fyj")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_t8dlw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_t8dlw")
@@ -76,7 +103,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
-theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_fonts/font = ExtResource("2_k5fyj")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6i5xb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_6i5xb")
@@ -94,7 +121,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
-theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_fonts/font = ExtResource("2_k5fyj")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uprb6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_uprb6")
@@ -112,7 +139,7 @@ layout_mode = 2
 
 [node name="label" type="RichTextLabel" parent="menuroot/mainmenu/confirmation/vertical"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_py7nv")
+theme_override_fonts/normal_font = ExtResource("2_k5fyj")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[shake]ARE YOU SURE?"
@@ -132,7 +159,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
-theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_fonts/font = ExtResource("2_k5fyj")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_t8dlw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_t8dlw")
@@ -150,7 +177,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
-theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_fonts/font = ExtResource("2_k5fyj")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_t8dlw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_t8dlw")
@@ -175,22 +202,149 @@ layout_mode = 2
 [node name="vertical" type="VBoxContainer" parent="menuroot/settingsmenu/center"]
 layout_mode = 2
 
-[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical"]
+[node name="label" type="RichTextLabel" parent="menuroot/settingsmenu/center/vertical"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_py7nv")
-theme_override_font_sizes/font_size = 48
-text = "Work in Progress"
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("2_k5fyj")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake]Settings"
+fit_content = true
+autowrap_mode = 0
 
-[node name="HSeparator" type="HSeparator" parent="menuroot/settingsmenu/center/vertical"]
+[node name="hseperator" type="HSeparator" parent="menuroot/settingsmenu/center/vertical"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="horizontal" type="HBoxContainer" parent="menuroot/settingsmenu/center/vertical"]
+layout_mode = 2
+
+[node name="video" type="VBoxContainer" parent="menuroot/settingsmenu/center/vertical/horizontal"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical/horizontal/video"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k5fyj")
+theme_override_font_sizes/font_size = 32
+text = "Display"
+
+[node name="seperator" type="HSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal/video"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="fullscreen" type="CheckBox" parent="menuroot/settingsmenu/center/vertical/horizontal/video"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k5fyj")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tqhyq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tqhyq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tqhyq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tqhyq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_tqhyq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tqhyq")
+text = " Fullscreen
+"
+
+[node name="seperator" type="VSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="audio" type="VBoxContainer" parent="menuroot/settingsmenu/center/vertical/horizontal"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_k5fyj")
+theme_override_font_sizes/font_size = 32
+text = "Audio"
+
+[node name="seperator" type="HSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="master" type="HBoxContainer" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/master"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k5fyj")
+theme_override_font_sizes/font_size = 16
+text = "Master"
+
+[node name="masterslider" type="HSlider" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/master"]
+custom_minimum_size = Vector2(250, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="seperator2" type="HSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="music" type="HBoxContainer" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/music"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k5fyj")
+theme_override_font_sizes/font_size = 16
+text = "Music"
+
+[node name="seperator" type="VSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/music"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="musicslider" type="HSlider" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/music"]
+custom_minimum_size = Vector2(250, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="seperator3" type="HSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="sfx" type="HBoxContainer" parent="menuroot/settingsmenu/center/vertical/horizontal/audio"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/sfx"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k5fyj")
+theme_override_font_sizes/font_size = 16
+text = "SFX"
+
+[node name="seperator" type="VSeparator" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/sfx"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+
+[node name="sfxslider" type="HSlider" parent="menuroot/settingsmenu/center/vertical/horizontal/audio/sfx"]
+custom_minimum_size = Vector2(250, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="hseperator2" type="HSeparator" parent="menuroot/settingsmenu/center/vertical"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 
 [node name="back" type="Button" parent="menuroot/settingsmenu/center/vertical"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.701961, 0.917647, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.870588, 0.4, 1)
-theme_override_fonts/font = ExtResource("1_py7nv")
+theme_override_fonts/font = ExtResource("2_k5fyj")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kblig")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_kblig")
@@ -205,19 +359,63 @@ script = ExtResource("3_fkact")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="menuroot/ParallaxBackground"]
 
-[node name="background" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+[node name="background1" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+visible = false
 position = Vector2(1152, 324)
-texture = ExtResource("3_mmmgp")
+texture = ExtResource("4_gch18")
+
+[node name="background2" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2(1500, 324)
+texture = ExtResource("5_u7lil")
+
+[node name="background3" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2(1500, 324)
+texture = ExtResource("6_poxyp")
+
+[node name="background4" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2(1500, 324)
+texture = ExtResource("7_472cq")
+
+[node name="background5" type="Sprite2D" parent="menuroot/ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2(1500, 324)
+texture = ExtResource("8_na6cj")
+
+[node name="transition" type="ColorRect" parent="menuroot"]
+modulate = Color(1, 1, 0.827451, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="menuroot"]
+libraries = {
+"": SubResource("AnimationLibrary_6n2if")
+}
 
 [node name="click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_50l2j")
+stream = ExtResource("5_qiyou")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="menubgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_cqviq")
+stream = ExtResource("6_ybvwm")
+volume_db = -10.0
+bus = &"Music"
 
 [connection signal="pressed" from="menuroot/mainmenu/center/vertical/start" to="menuroot" method="_on_start_pressed"]
 [connection signal="pressed" from="menuroot/mainmenu/center/vertical/settings" to="menuroot" method="_on_settings_pressed"]
 [connection signal="pressed" from="menuroot/mainmenu/center/vertical/exit" to="menuroot" method="_on_exit_pressed"]
 [connection signal="pressed" from="menuroot/mainmenu/confirmation/vertical/horizontal/yes" to="menuroot" method="_on_yes_pressed"]
 [connection signal="pressed" from="menuroot/mainmenu/confirmation/vertical/horizontal/no" to="menuroot" method="_on_no_pressed"]
+[connection signal="toggled" from="menuroot/settingsmenu/center/vertical/horizontal/video/fullscreen" to="menuroot" method="_on_fullscreen_toggled"]
+[connection signal="value_changed" from="menuroot/settingsmenu/center/vertical/horizontal/audio/master/masterslider" to="menuroot" method="_on_masterslider_value_changed"]
+[connection signal="value_changed" from="menuroot/settingsmenu/center/vertical/horizontal/audio/music/musicslider" to="menuroot" method="_on_musicslider_value_changed"]
+[connection signal="value_changed" from="menuroot/settingsmenu/center/vertical/horizontal/audio/sfx/sfxslider" to="menuroot" method="_on_sfxslider_value_changed"]
 [connection signal="pressed" from="menuroot/settingsmenu/center/vertical/back" to="menuroot" method="_on_back_pressed"]
