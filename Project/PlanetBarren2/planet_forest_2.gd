@@ -19,7 +19,7 @@ func _process(delta):
 	pass
 
 
-func _on_plante_forest_area_body_entered(body):
+func _on_plante_barren_area_body_entered(body):
 	land = true
 	if body.speed > crushSpeed:		# Speed
 		crush = true
