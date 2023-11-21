@@ -1,7 +1,37 @@
-[gd_scene format=3 uid="uid://dxivvqgwvukno"]
+[gd_scene load_steps=5 format=3 uid="uid://dxivvqgwvukno"]
 
-[node name="PlanetBarren" type="RigidBody2D"]
+[ext_resource type="Script" path="res://planet_barren.gd" id="1_jorbn"]
+[ext_resource type="Texture2D" uid="uid://bo2a7jnmbd6uf" path="res://art/planetBarren2.png" id="1_lqu83"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8nti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lqu83")
+}],
+"loop": true,
+"name": &"PlanetBarren",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yrk0f"]
+radius = 200.721
+
+[node name="PlanetBarren" type="RigidBody2D" groups=["PlanetBarren"]]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_jorbn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.409478, 0.38964)
+sprite_frames = SubResource("SpriteFrames_l8nti")
+animation = &"PlanetBarren"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CircleShape2D_yrk0f")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-160, -160, 320, 320)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
