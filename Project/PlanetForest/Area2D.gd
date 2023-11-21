@@ -6,7 +6,7 @@ var vegetation = true
 
 var land = false	#whether ship lands on the planet
 var crush = false	#whether ship crushes
-@export var fuel = false
+@export var fuelInt = false
 var crushSpeed = 400 #set some value
 
 
