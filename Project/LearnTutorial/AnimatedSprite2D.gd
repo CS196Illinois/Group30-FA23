@@ -1,5 +1,7 @@
 class_name LearnTutorial extends AnimatedSprite2D
 
+var tutorialWebsite = "GDQuest_CodeYourFirstComplete2DGameWithGodot" #https://www.youtube.com/watch?v=WEt2JHEe-do
+
 @export var speed = 500.0
 var screenSize = Vector2.ZERO
 
