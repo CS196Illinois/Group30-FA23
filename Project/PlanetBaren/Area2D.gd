@@ -1,11 +1,12 @@
-extends Node2D
+class_name PlaetBaren extends Area2D
 
-var mass = 1000
-var vegetation = false #set some value
+
+@export var mass = 1000 #set some value
+var vegetation = false
 
 var land = false	#whether ship lands on the planet
 var crush = false	#whether ship crushes
-var fuel = false
+@export var fuelInt = false
 var crushSpeed = 300 #set some value
 
 
@@ -19,10 +20,9 @@ func _process(delta):
 	pass
 
 
-func _on_plante_barren_area_body_entered(body):
+func _on_plante_forest_area_body_entered(body):
 	land = true
 	if body.speed > crushSpeed:		# Speed
 		crush = true
 	if fuel: 
 		pass
-
