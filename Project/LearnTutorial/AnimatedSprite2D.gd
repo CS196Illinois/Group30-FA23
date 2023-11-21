@@ -1,9 +1,12 @@
 class_name LearnTutorial extends AnimatedSprite2D
 
 @export var speed = 500.0
+var screenSize = Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	screenSize = get_viewport_rect().size
+	print(screenSize)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,4 +25,5 @@ func _process(delta):
 		direction = direction.normalized()
 	
 	position += direction * speed * delta
-	
+	position.x = clamp(position.x, 0, screenSize.x)
+	position.y = clamp(position.y, 0, screenSize.y)
