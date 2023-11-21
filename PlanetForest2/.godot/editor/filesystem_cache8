@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1699660664
+icon.svg::CompressedTexture2D::7032518438979279737::1698207460::1698207464::1::::<><>::
+planet_forest_2.gd::GDScript::-1::1699660173::0::1::::<>Node2D<>::
+planet_forest_2.tscn::PackedScene::13845205883340490::1699660173::0::1::::<><>::res://planet_forest_2.gd<>uid://b2mui1i6kfgam::::res://art/PlanetForest2.png
+::res://art/::1698207492
+planetBarren2.png::CompressedTexture2D::3424860332729449617::1697238259::1698207487::1::::<><>::
+PlanetForest2.png::CompressedTexture2D::4307522000562865228::1697238938::1698207492::1::::<><>::
