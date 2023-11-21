@@ -1,0 +1,35 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1700540134
+default_bus_layout.tres::AudioBusLayout::7999779747240908083::1699661531::0::1::::<><>::
+::res://Resources/::1699661531
+::res://Resources/Audio/::1699661531
+::res://Resources/Audio/Music/::1699661531
+05 - ziki_7 - Lunatic Red Eyes.mp3::AudioStreamMP3::3118312273579174804::1699661531::1700540134::1::::<><>::
+::res://Resources/Audio/SFX/::1699661531
+button-124476.mp3::AudioStreamMP3::3530427659302722272::1699661531::1700540134::1::::<><>::
+::res://Resources/Fonts/::1699661531
+PressStart2P.ttf::FontFile::8012503909005370818::1699661531::1700540134::1::::<><>::
+TMR.ttf::FontFile::1977969281584336019::1699661531::1700540134::1::::<><>::
+::res://Resources/Textures/::1699661531
+background1.png::CompressedTexture2D::2780025190912169614::1699661531::1700540135::1::::<><>::
+background2.png::CompressedTexture2D::2196709178871657073::1699661531::1700540135::1::::<><>::
+background3.png::CompressedTexture2D::8805753180916710058::1699661531::1700540135::1::::<><>::
+background4.png::CompressedTexture2D::1661959898696546951::1699661531::1700540135::1::::<><>::
+background5.png::CompressedTexture2D::7756168385531016766::1699661531::1700540135::1::::<><>::
+blackhole.png::CompressedTexture2D::279326633658293502::1699661531::1700540136::1::::<><>::
+guy.png::CompressedTexture2D::685203607838468736::1699661531::1700540134::1::::<><>::
+hazard.png::CompressedTexture2D::4211951557699219061::1699661531::1700540134::1::::<><>::
+::res://Scenes/::1699661531
+blackhole.tscn::PackedScene::8560073785564001662::1699661531::0::1::::<><>::res://Scripts/deathzone.gd<>uid://d8kp68sc2mcs::::res://Resources/Textures/blackhole.png<>res://Scripts/rotate.gd
+blackholeAlternate.tscn::PackedScene::7534807044422549350::1699661531::0::1::::<><>::uid://d8kp68sc2mcs::::res://Resources/Textures/blackhole.png<>res://Scripts/rotate.gd<>res://Scripts/deathzone.gd<>uid://b1akhyfoi2dib::::res://Resources/Textures/hazard.png<>res://Scripts/rotateslow.gd
+gameover.tscn::PackedScene::3548904854885368157::1699661531::0::1::::<><>::uid://3ge4obhiic2v::::res://Resources/Fonts/TMR.ttf
+menu.tscn::PackedScene::1379290732186802600::1699661531::0::1::::<><>::res://Scripts/menuroot.gd<>uid://dmfk1ewsy5bpq::::res://Resources/Fonts/PressStart2P.ttf<>res://Scripts/background.gd<>uid://bfuwuxxos1u7o::::res://Resources/Textures/background1.png<>uid://bqkfvlw7vdf8c::::res://Resources/Audio/SFX/button-124476.mp3<>uid://6kdqj81a7bwb::::res://Resources/Textures/background2.png<>uid://dxptp6ofb0osw::::res://Resources/Textures/background3.png<>uid://bkosfatqxpobs::::res://Resources/Audio/Music/05 - ziki_7 - Lunatic Red Eyes.mp3<>uid://xxcibv5k0del::::res://Resources/Textures/background4.png<>uid://dire7v5sacmfu::::res://Resources/Textures/background5.png
+test.tscn::PackedScene::5971820141802736916::1699661531::0::1::::<><>::uid://dfl6f241br40i::::res://Scenes/blackholeAlternate.tscn<>res://Scripts/RigidBody2D.gd<>uid://j06g6a7uy5ls::::res://Resources/Textures/guy.png<>uid://dt7tfujwwv6o5::::res://Scenes/blackhole.tscn<>res://Scripts/blackholeAlternate.gd
+::res://Scripts/::1699661531
+background.gd::GDScript::-1::1699661531::0::1::::<>ParallaxBackground<>::
+blackholeAlternate.gd::GDScript::-1::1699661531::0::1::::<>Area2D<>::
+deathzone.gd::GDScript::-1::1699661531::0::1::::<>Area2D<>::
+menuroot.gd::GDScript::-1::1699661531::0::1::::<>Control<>::
+RigidBody2D.gd::GDScript::-1::1699661531::0::1::::<>RigidBody2D<>::
+rotate.gd::GDScript::-1::1699661531::0::1::::<>Sprite2D<>::
+rotateslow.gd::GDScript::-1::1699661531::0::1::::<>Sprite2D<>::
