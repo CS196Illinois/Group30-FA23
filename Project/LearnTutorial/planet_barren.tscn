@@ -19,6 +19,7 @@ radius = 200.721
 
 [node name="PlanetBarren" type="RigidBody2D" groups=["PlanetBarren"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
+gravity_scale = 2.66454e-15
 script = ExtResource("1_jorbn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
