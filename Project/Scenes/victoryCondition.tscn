@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://duxoeogye2nxj"]
+
+[ext_resource type="Script" path="res://Scripts/victoryCondition.gd" id="1_cg2th"]
+[ext_resource type="Texture2D" uid="uid://disgm37275r35" path="res://Resources/Textures/R.png" id="2_eqv4b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxw8g"]
+
+[node name="victoryCondition" type="Area2D"]
+script = ExtResource("1_cg2th")
+
+[node name="texture" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_eqv4b")
+
+[node name="staticbody" type="StaticBody2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="staticbody"]
+shape = SubResource("CircleShape2D_hxw8g")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hxw8g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

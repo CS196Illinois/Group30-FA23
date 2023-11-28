@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvgn467v16w8b"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_1ago2"]
+[ext_resource type="Texture2D" uid="uid://cai7l45ph0klu" path="res://Resources/Textures/Kla'ed - Frigate - Base.png" id="2_c4fyh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_706jo"]
+atlas = ExtResource("2_c4fyh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lb5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_706jo")
+}],
+"loop": true,
+"name": &"Base 1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6pgx0"]
+radius = 46.0109
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1ago2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 5
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4lb5s")
+animation = &"Base 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_6pgx0")
+
+[node name="FiringPositions" type="Node2D" parent="."]
+position = Vector2(43, 0)
+
+[node name="Muzzle" type="Marker2D" parent="FiringPositions"]
+position = Vector2(33, 0)
+
+[node name="FireDelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, 0)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true

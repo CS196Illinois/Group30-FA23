@@ -9,6 +9,8 @@
 [node name="blackhole" type="Area2D"]
 scale = Vector2(10, 10)
 script = ExtResource("1_xsql6")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="texture" type="Sprite2D" parent="."]
 scale = Vector2(0.03, 0.03)
