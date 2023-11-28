@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://brkvx6prc82xf"]
+[gd_scene load_steps=3 format=3 uid="uid://brkvx6prc82xf"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_mwbvd"]
+
+[sub_resource type="Curve2D" id="Curve2D_tov3p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1600, 0, 0, 0, 0, 0, 1600, 1200, 0, 0, 0, 0, 0, 1200, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="Main" type="Node"]
+script = ExtResource("1_mwbvd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -9,3 +18,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0588235, 0.207843, 0, 1)
+
+[node name="PlanetBarren Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_tov3p")
+
+[node name="PlanetBarrenSpawnPosition" type="PathFollow2D" parent="PlanetBarren Path"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
