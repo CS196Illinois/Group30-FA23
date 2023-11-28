@@ -10,10 +10,10 @@ script = ExtResource("1_8rotp")
 [node name="Planet" parent="." instance=ExtResource("2_syn3w")]
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(55, 58)
+position = Vector2(107, 65)
 
 [node name="Player" parent="." instance=ExtResource("3_e60v0")]
-position = Vector2(55, 58)
+position = Vector2(107, 65)
 
 [node name="CameraTransformer" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://daiwmgkhh014m" path="res://entities/player/player_sprite.png" id="2_xtvsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ly33n"]
-size = Vector2(9, 20)
+size = Vector2(9, 21)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_w8gh3")
@@ -13,7 +13,7 @@ script = ExtResource("1_w8gh3")
 texture = ExtResource("2_xtvsy")
 
 [node name="PlayerCollider" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_ly33n")
 
 [node name="RayDown" type="RayCast2D" parent="."]
