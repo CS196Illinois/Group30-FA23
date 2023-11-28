@@ -6,7 +6,7 @@ var vegetation = false
 
 var land = false	#whether ship lands on the planet
 var crush = false	#whether ship crushes
-@export var fuelInt = false
+var haveFuel = false
 var crushSpeed = 300 #set some value
 
 
@@ -24,5 +24,5 @@ func _on_plante_forest_area_body_entered(body):
 	land = true
 	if body.speed > crushSpeed:		# Speed
 		crush = true
-	if fuel: 
+	if haveFuel: 
 		pass
