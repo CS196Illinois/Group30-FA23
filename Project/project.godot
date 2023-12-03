@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Space Project"
-run/main_scene="res://Scenes/background_stars.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+run/main_scene="res://Scenes/ui.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
 run/collision/shape_color=Color(0, 0.6, 0.7, 0.42)
 run/collision/draw_2d_outlines=true
 
