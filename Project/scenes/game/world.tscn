@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cru4mkvr7rftk"]
+[gd_scene load_steps=5 format=3 uid="uid://cru4mkvr7rftk"]
 
 [ext_resource type="Script" path="res://scenes/game/world.gd" id="1_8rotp"]
 [ext_resource type="PackedScene" uid="uid://cd3vhowegudjv" path="res://scenes/game/elements/planet.tscn" id="2_syn3w"]
 [ext_resource type="PackedScene" uid="uid://bux4y1xgrr11o" path="res://entities/player/player.tscn" id="3_e60v0"]
+[ext_resource type="PackedScene" uid="uid://dhlrlb7ngnrtu" path="res://background_stars.tscn" id="4_m5ubu"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_8rotp")
@@ -23,3 +24,10 @@ position = Vector2(-1, 0)
 scale = Vector2(2.381, 2.381)
 remote_path = NodePath("../../Camera")
 update_scale = false
+
+[node name="backgroundStarField" parent="Player/CameraTransformer" instance=ExtResource("4_m5ubu")]
+offset = Vector2(-700, -500)
+scale = Vector2(1.468, 1.468)
+transform = Transform2D(1.468, 0, 0, 1.468, -700, -500)
+
+[editable path="Player/CameraTransformer/backgroundStarField"]

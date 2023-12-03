@@ -11,7 +11,7 @@ var current_planet
 const MASS = 10
 const MAX_FLYING_SPEED = 2000
 const FLYING_ACCELERATION = 200
-
+const WALK_SPEED = 5000
 # Stores all the potential states that the player can be in, will be useful later to simplify complicated tasks.
 enum states {
 	GROUNDED,
@@ -47,19 +47,32 @@ func _physics_process(delta):
 	# player input
 	match current_state:
 		states.GROUNDED:
-			pass
+			relative_up = (global_position - current_planet.global_position).normalized()
+			relative_down = -relative_up.normalized()
+			relative_left = Vector2(-relative_up.y, relative_up.x).normalized()
+			relative_right = -relative_left.normalized()
+			velocity = velocity.rotated(velocity.angle_to(current_planet.position))
+			rotation = Vector2.UP.angle_to(relative_up)
+			
+			move_grounded(delta)
+			
+			velocity = relative_down * grounded_gravitational_pull + relative_left * (player_input.x * WALK_SPEED)
+			
+			if not is_grounded():
+				current_state = states.FALLING
+			
 		states.FLYING:
 			move_floating(delta)
 			velocity = clamp_vector(input_velocity, MAX_FLYING_SPEED) * delta
 			
-
 		states.FALLING:
 			move_floating(delta)
 			velocity = (clamp_vector(input_velocity, MAX_FLYING_SPEED) + gravitational_force) * delta
 			
+			if is_grounded():
+				current_state = states.GROUNDED
 			
-	print(velocity.length())
-	print(planets)
+			
 	move_and_slide()
 
 # set gravity direction based on planet influence
@@ -159,5 +172,7 @@ func _on_player_area_area_exited(area):
 		planets.erase(p.get_name())
 		if planets.is_empty():
 			current_state = states.FLYING
-		
+	elif area.is_in_group("OrientField"):
+		current_planet = null
+		current_state = states.FALLING
 		
