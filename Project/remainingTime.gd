@@ -3,7 +3,6 @@ extends Label
 var time = 10
 var is_timer_on = true
 var hasChanged = false
-var hasPlayed = false
 
 func _process(delta):
 	if is_timer_on:
@@ -19,6 +18,3 @@ func _process(delta):
 	if time <= 0:
 		is_timer_on = false
 		text = "Gameover"
-	if time <= 0 && !hasPlayed:
-		$VideoStreamPlayer.play()
-		hasPlayed = true
