@@ -12,14 +12,14 @@ script = ExtResource("1_8rotp")
 has_oxygen = false
 
 [node name="Planet2" parent="." instance=ExtResource("2_syn3w")]
-position = Vector2(353, -18)
+position = Vector2(500, -18)
 has_fuel = false
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(160, -198)
+position = Vector2(160, -350)
 
 [node name="Player" parent="." instance=ExtResource("3_e60v0")]
-position = Vector2(161, -198)
+position = Vector2(161, -350)
 
 [node name="CameraTransformer" type="RemoteTransform2D" parent="Player"]
 position = Vector2(-1, 0)
@@ -33,9 +33,9 @@ scale = Vector2(1.468, 1.468)
 transform = Transform2D(1.468, 0, 0, 1.468, -700, -500)
 
 [node name="ColorRect" parent="Player/CameraTransformer/backgroundStarField" index="0"]
-offset_left = 171.662
-offset_top = 83.1062
-offset_right = 5171.66
-offset_bottom = 5083.11
+offset_left = -70.8447
+offset_top = -186.648
+offset_right = 4929.15
+offset_bottom = 4813.36
 
 [editable path="Player/CameraTransformer/backgroundStarField"]

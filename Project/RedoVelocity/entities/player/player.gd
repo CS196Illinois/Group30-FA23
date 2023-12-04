@@ -146,7 +146,6 @@ func set_gravity():
 		var direction = (planets[i].global_position - global_position).normalized()
 		var influence = 1000 * MASS * planets[i].MASS / position.distance_squared_to(planets[i].position)
 		gravity += direction * influence
-	#print(gravity.length())
 	g.target_position = gravity
 	return gravity
 
