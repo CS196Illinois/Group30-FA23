@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://q1rnjt7scsbx"]
+[gd_scene load_steps=5 format=3 uid="uid://q1rnjt7scsbx"]
 
-[ext_resource type="Script" path="res://Scripts/remainingTime.gd" id="1_mntni"]
-[ext_resource type="FontFile" uid="uid://dmfk1ewsy5bpq" path="res://Resources/Fonts/PressStart2P.ttf" id="1_wohov"]
-[ext_resource type="VideoStream" path="res://Resources/explosion.ogv" id="3_wy68g"]
+[ext_resource type="Script" path="res://remainingTime.gd" id="1_mntni"]
 
 [sub_resource type="Animation" id="Animation_isjco"]
 length = 0.001
@@ -54,7 +52,6 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_wohov")
 theme_override_font_sizes/font_size = 32
 text = "fdsasdf"
 horizontal_alignment = 1
@@ -65,11 +62,3 @@ script = ExtResource("1_mntni")
 libraries = {
 "": SubResource("AnimationLibrary_7a7oq")
 }
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="remainingTime"]
-layout_mode = 0
-offset_left = -563.0
-offset_top = -455.0
-offset_right = 77.0
-offset_bottom = -87.0
-stream = ExtResource("3_wy68g")

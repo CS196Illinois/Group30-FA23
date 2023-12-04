@@ -10,15 +10,14 @@ var current_planet
 # Player movement constants
 const MASS = 10
 const FLYING_ACCELERATION = 10
-const WALK_SPEED = 5000
 const ROTATE_SPEED = 1.6
 
 const FUEL_CONSUME_RATE = 10
-const MAX_FUEL = 200
+const MAX_FUEL = 1000000
 const FUEL_REFILLING_RATE = 20
 
 const MAX_OXYGEN = 100
-const OXYGEN_CONSUME_RATE = 10
+const OXYGEN_CONSUME_RATE = 2
 const OXYGEN_REFILLING_RATE = 5
 
 const A_SINGLE_JUMP = 30
@@ -34,10 +33,6 @@ var current_state = states.FLYING
 
 # Relative directions on the current planet.
 var relative_up = Vector2.UP	
-var relative_down = Vector2.DOWN
-var relative_right = Vector2.RIGHT
-var relative_left = Vector2.LEFT
-var rel_up_last_frame = relative_up
 var rotation_vector = Vector2.ZERO
 
 var player_input = Vector2.ZERO
@@ -83,9 +78,6 @@ func _physics_process(delta):
 	match current_state:
 		states.GROUNDED:
 			relative_up = (global_position - current_planet.global_position).normalized()
-			relative_down = -relative_up.normalized()
-			relative_left = Vector2(-relative_up.y, relative_up.x).normalized()
-			relative_right = -relative_left.normalized()	
 			
 			
 			if not is_grounded():
@@ -174,8 +166,21 @@ func move_floating(delta):
 
 func jump(delta, check_on_ground, check_can_jump):
 	if not check_on_ground:
-		jump_scaler = 2
-		jump_scenes_decrease = 5
+		
+		if Input.is_action_just_pressed("jump") && (not player_input.length() == 0):
+			jump_scaler = 2.5
+			jump_scenes_decrease = 5
+			if fuel >= 5:
+				fuel -= 5
+				if player_input.x > 0:
+					jump_right_scenes += A_SINGLE_JUMP
+				if player_input.x < 0:
+					jump_left_scenes += A_SINGLE_JUMP
+				if player_input.y > 0:
+					jump_down_scenes += A_SINGLE_JUMP
+				if player_input.y < 0:
+					jump_up_scenes += A_SINGLE_JUMP
+				
 		if jump_up_scenes > 0.1:
 			velocity += Vector2.UP * jump_up_scenes * jump_up_scenes * jump_scaler * delta
 			jump_up_scenes /= jump_scenes_decrease
@@ -189,17 +194,7 @@ func jump(delta, check_on_ground, check_can_jump):
 			velocity += Vector2.LEFT * jump_left_scenes * jump_left_scenes * jump_scaler * delta
 			jump_left_scenes /= jump_scenes_decrease
 		
-		if Input.is_action_just_pressed("jump") && (not player_input.length() == 0):
-			if fuel >= 5:
-				fuel -= 5
-				if player_input.x > 0:
-					jump_right_scenes += A_SINGLE_JUMP
-				if player_input.x < 0:
-					jump_left_scenes += A_SINGLE_JUMP
-				if player_input.y > 0:
-					jump_down_scenes += A_SINGLE_JUMP
-				if player_input.y < 0:
-					jump_up_scenes += A_SINGLE_JUMP
+		
 	if check_on_ground:
 		jump_up_scenes = 0
 		jump_down_scenes = 0
