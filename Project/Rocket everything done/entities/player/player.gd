@@ -110,13 +110,14 @@ func _physics_process(delta):
 						check_win = true
 					velocity = Vector2.ZERO
 					jump(delta, true, true)
-					move_floating(delta)
-					if player_input.x > 0:
-						rotation_vector = (-current_planet.global_position + global_position).rotated(ROTATE_SPEED * delta)
-						global_position = current_planet.global_position + rotation_vector
-					if player_input.x < 0:
-						rotation_vector = (-current_planet.global_position + global_position).rotated(-ROTATE_SPEED * delta)
-						global_position = current_planet.global_position + rotation_vector
+					if fuel > 0:
+						move_floating(delta)
+						if player_input.x > 0:
+							rotation_vector = (-current_planet.global_position + global_position).rotated(ROTATE_SPEED * delta)
+							global_position = current_planet.global_position + rotation_vector
+						if player_input.x < 0:
+							rotation_vector = (-current_planet.global_position + global_position).rotated(-ROTATE_SPEED * delta)
+							global_position = current_planet.global_position + rotation_vector
 						
 				
 				
@@ -229,8 +230,9 @@ func jump(delta, check_on_ground, check_can_jump):
 		
 		if check_can_jump:
 			if Input.is_action_just_pressed("jump"):
-				fuel -= 0
-				jump_escape_scenes += A_SINGLE_JUMP * 3
+				if fuel > 0:
+					fuel -= 0
+					jump_escape_scenes += A_SINGLE_JUMP * 3
 			
 
 			
