@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqse5n2e0jy4x"]
+
+[ext_resource type="Script" path="res://Planet_B3.gd" id="1_gmt5p"]
+[ext_resource type="Texture2D" uid="uid://ckldyybmhaoqb" path="res://art/PlanetBarren3.png" id="2_qvmhg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thrlc"]
+radius = 54.1479
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4f18"]
+radius = 557.109
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nixcd"]
+radius = 90.0056
+
+[node name="Planet_B3" type="StaticBody2D"]
+script = ExtResource("1_gmt5p")
+
+[node name="PlanetSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.026, 0.026)
+texture = ExtResource("2_qvmhg")
+
+[node name="PlanetCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_thrlc")
+
+[node name="PlanetGravity" type="Area2D" parent="." groups=["PlanetGravity"]]
+
+[node name="PlanetGravityShape" type="CollisionShape2D" parent="PlanetGravity"]
+shape = SubResource("CircleShape2D_g4f18")
+
+[node name="OrientField" type="Area2D" parent="." groups=["OrientField"]]
+
+[node name="OrientFieldShape" type="CollisionShape2D" parent="OrientField"]
+shape = SubResource("CircleShape2D_nixcd")

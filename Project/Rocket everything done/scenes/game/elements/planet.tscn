@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd3vhowegudjv"]
 
 [ext_resource type="Script" path="res://scenes/game/elements/planet.gd" id="1_iodc6"]
-[ext_resource type="Texture2D" uid="uid://foeasaih0hr1" path="res://scenes/game/elements/planet.png" id="2_1gcn1"]
+[ext_resource type="Texture2D" uid="uid://bmxseqa4h14f3" path="res://art/PlanetForest1.png" id="2_5ukjm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5n5yc"]
 radius = 54.1479
@@ -16,11 +16,10 @@ radius = 90.0056
 script = ExtResource("1_iodc6")
 
 [node name="PlanetSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.2325, 0.2325)
-texture = ExtResource("2_1gcn1")
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_5ukjm")
 
 [node name="PlanetCollider" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_5n5yc")
 
 [node name="PlanetGravity" type="Area2D" parent="." groups=["PlanetGravity"]]

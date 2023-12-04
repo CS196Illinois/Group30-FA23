@@ -13,8 +13,10 @@ script = ExtResource("1_w8gh3")
 texture = ExtResource("2_xtvsy")
 
 [node name="PlayerArea" type="Area2D" parent="."]
+visible = false
 
 [node name="PlanetDetection" type="CollisionShape2D" parent="PlayerArea"]
+visible = false
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_ly33n")
 
